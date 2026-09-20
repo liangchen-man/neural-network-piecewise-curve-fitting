@@ -1,0 +1,19 @@
+{
+  "representation": "arc_length_to_radius",
+  "split_seed": 20260919,
+  "model_seeds": [0, 1, 2],
+  "updates": 750,
+  "learning_rate": 0.001,
+  "curvature_lambda": 0.000001,
+  "regularization_selection_evidence": "outputs/regularization_selection.json; selected on real_row_0/interpolation/seed0 without test labels",
+  "selection_rule": "validation RMSE within 1.05x of best prefers lower finite-difference roughness; frozen before final test reporting",
+  "check_every_updates": 50,
+  "early_stop_patience_checks": 10,
+  "protocols": {
+    "interpolation": "fixed random 70/15/15 train/validation/test indices",
+    "gap": "central contiguous 10% held out as final test; remaining points randomized 85/15 train/validation"
+  },
+  "geometry": "Arc length and radial target use the complete measured (X,Z) curve only as declared transductive geometry; every target scaler uses train indices only.",
+  "budget_rationale": "750 updates is frozen after timing the original 250-update runs. It is below the 5000-update cap to make the real six-curve, two-protocol, five-model, three-seed matrix feasible.",
+  "real_curve_selection": "predeclared source rows 0,900,1800,2700,3600,4500,5400,6300; first six are the fixed formal real set"
+}

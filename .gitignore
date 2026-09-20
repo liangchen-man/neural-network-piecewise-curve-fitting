@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+outputs/
+data_small/
+verification/
+originals/
+_task_packet/
+*.zip
+*.rar
+*.csv
+*.bmp
+*.docx
+*.json
+!configs/
+!configs/curve_fitting.json
